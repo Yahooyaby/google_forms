@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Question extends Model
 {
@@ -15,4 +16,10 @@ class Question extends Model
     {
         return $this->belongsTo(Form::class);
     }
+
+    public function answerOptions():HasMany
+    {
+        return $this->hasMany(AnswerOption::class);
+    }
+
 }

@@ -50,7 +50,7 @@ class User extends Authenticatable
         return $this->hasMany(Form::class);
     }
 
-    public function questions():HasManyThrough
+    public function question():HasManyThrough
     {
         return $this->hasManyThrough(Question::class,Form::class);
     }
