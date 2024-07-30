@@ -25,4 +25,9 @@ class Form extends Model
         return $this->hasMany(Question::class);
     }
 
+    public function responses():HasMany
+    {
+        return $this->hasMany(Response::class);
+    }
+
 }

@@ -22,4 +22,9 @@ class Question extends Model
         return $this->hasMany(AnswerOption::class);
     }
 
+    public function answers():HasMany
+    {
+        return $this->hasMany(Answer::class);
+    }
+
 }

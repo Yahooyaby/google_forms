@@ -13,8 +13,9 @@ class FormController extends Controller
     public function home():View
     {
         $forms = Form::all();
+        $user = auth()->user()->id;
 
-        return view('forms.home',['forms' => $forms]);
+        return view('forms.home',['forms' => $forms,'user' => $user]);
     }
 
     public function index(Request $request):View

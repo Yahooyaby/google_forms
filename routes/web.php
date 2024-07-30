@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AnswerOptionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
@@ -39,7 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/forms/{form}/answer_options',[AnswerOptionController::class,'store'])->name('forms.answerOption.store');
     Route::get('/home',[FormController::class,'home'])->name('forms.home');
     Route::post('/responses',[ResponseController::class,'store'])->name('responses.store');
-
+    Route::get('/responses/answers/create',[AnswerController::class,'create'])->name('answers.create');
+    Route::post('/responses/answers',[AnswerController::class,'store'])->name('answers.store');
+    Route::get('/responses/{id}',[ResponseController::class,'show'])->name('responses.show');
 
 
 

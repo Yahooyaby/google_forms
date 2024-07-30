@@ -45,7 +45,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function form():HasMany
+    public function forms():HasMany
     {
         return $this->hasMany(Form::class);
     }
@@ -53,6 +53,11 @@ class User extends Authenticatable
     public function question():HasManyThrough
     {
         return $this->hasManyThrough(Question::class,Form::class);
+    }
+
+    public function responses():HasMany
+    {
+        return $this->hasMany(Response::class);
     }
 
 }
